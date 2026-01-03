@@ -5,28 +5,25 @@ import { NavLink } from 'react-router-dom'
 const Navbar = () => {
   console.log('Navbar component rendered')
   return (
-    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px', borderBottom: '1px solid #ccc'}}>
-      {assets.logo ? (
-        <img src={assets.logo} style={{width: '144px'}} alt="logo" />
-      ) : (
-        <div style={{width: '144px', backgroundColor: '#ccc', padding: '10px'}}>Logo</div>
-      )}
-      <ul style={{display: 'flex', gap: '20px', listStyle: 'none', margin: 0, padding: 0}}>
-        <li><NavLink to='/' style={{textDecoration: 'none', color: '#555'}}>Home</NavLink></li>
-        <li><NavLink to='/collection' style={{textDecoration: 'none', color: '#555'}}>Collection</NavLink></li>
-        <li><NavLink to='/about' style={{textDecoration: 'none', color: '#555'}}>About</NavLink></li>
-        <li><NavLink to='/contact' style={{textDecoration: 'none', color: '#555'}}>Contact</NavLink></li>
+    <div className='flex items-center justify-between py-5 font-medium'>
+      <img src={assets.logo} className='w-36' alt="" />
+      <ul className='hidden sm:flex flex-col items-center gap-1'>
+        <NavLink to ='/' className='px-4 py-2 hover:text-gray-500'>Home</NavLink>
+        <NavLink to ='/collection' className='px-4 py-2 hover:text-gray-500'>Collection</NavLink>
+        <NavLink to ='/about' className='px-4 py-2 hover:text-gray-500'>About</NavLink>
+        <NavLink to ='/contact' className='px-4 py-2 hover:text-gray-500'>Contact</NavLink>
       </ul>
-      <div style={{display: 'flex', gap: '20px', alignItems: 'center'}}>
-        {assets.search_icon ? (
-          <img src={assets.search_icon} style={{width: '20px', cursor: 'pointer'}} alt="search" />
-        ) : (
-          <span>🔍</span>
-        )}
-        <NavLink to='/login' style={{padding: '8px 16px', border: '1px solid #555', textDecoration: 'none', color: '#555'}}>
-          Login
-        </NavLink>
-      </div>
+      
+<div className='flex items-center gap-6'>
+    <img src={assets.search_icon} className='w-4 h-4 cursor-pointer' alt="Search" />
+</div>
+    <div className='group relative'>
+      <img className='w-5' src={assets.profile_icon} alt="" />
+  <p></p>
+  <p></p>
+<p></p>
+    </div>
+    <link href='/cart' className='relative'></link> 
     </div>
   )
 }
