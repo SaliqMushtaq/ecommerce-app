@@ -32,6 +32,16 @@ const Navbar = () => {
     <img onClick={()=>setVisible(true)} src={assets.menu_icon_icon} className='w-5 cursor-pointer  sm:hidden' alt="" />
   {/* Mobile Menu for small screen */}
   <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
+    <div className='flex flex-col text-gray-600'>
+      <div onClick={()=> setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer '>
+        <img className='h-4  rotate-180' src={assets.dropdown_icon} alt="" />
+<p> Back</p>
+      </div>
+    <NavLink to ='/' className='px-4 py-2 hover:text-gray-500 border-b'>Home</NavLink>
+    <NavLink to ='/collection' className='px-4 py-2 hover:text-gray-500 border-b'>Collection</NavLink>
+    <NavLink to ='/about' className='px-4 py-2 hover:text-gray-500 border-b'>About</NavLink>
+    <NavLink to ='/contact' className='px-4 py-2 hover:text-gray-500 border-b'>Contact</NavLink>
+    </div>
   </div>
   </div>
 
